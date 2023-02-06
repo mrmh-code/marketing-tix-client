@@ -6,7 +6,6 @@ import Service from './components/Pages/Service/Service';
 import About from './components/Pages/About/About';
 import Portfolio from './components/Pages/Portfolio/Portfolio';
 import Videos from './components/Pages/Videos/Videos';
-import Contact from './components/Pages/Contact/Contact';
 import Cart from './components/Pages/Cart/Cart';
 function App() {
   const router=createBrowserRouter([
@@ -36,10 +35,6 @@ function App() {
           element:<Videos/>
         },
         
-        {
-          path:'/contact',
-          element:<Contact/>
-        },
         {
           path:'/cart',
           element:<Cart/>

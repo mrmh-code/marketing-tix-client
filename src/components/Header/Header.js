@@ -63,13 +63,7 @@ const Header = () => {
               Videos
             </NavLink>
 
-            <NavLink
-              to="contact"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              className="nav-link"
-            >
-              Contact Us
-            </NavLink>
+         
 
             <NavLink
               to="cart"

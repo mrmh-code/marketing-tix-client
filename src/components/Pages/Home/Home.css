@@ -1,4 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@500&family=Grand+Hotel&family=Poppins:wght@600;800;900&display=swap');
 .home-left{
     background-image: url('../../../assets/images/baner-dec-left.png');
     background-repeat: no-repeat;
+}
+.carousel{
+    
+}
+.carousel-item{
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
+
+.carousel-item h1{
+    font-size:50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+ 
+}
+.carousel-item h1 .color-1{
+    color: #03A4ED;
+    
+}
+
+.carousel-item h1 .color-2{
+    color: #FF695F;
+}
+.carousel-item h5{
+    color: #FF776D;
+}
+
+.home-p{
+    font-size: 20px;
+    color: #414141;
+ 
+   
+}
+
+.btn-blue{
+    display: inline-block;
+    background-color: #03a4ed;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: capitalize;
+    padding: 12px 25px;
+    border-radius: 23px;
+    letter-spacing: 0.25px;
+    border: 0px;
+}
+
+.btn-blue:hover {
+    background-color: #ff695f;
+  }
+
+.number{
+    font-size: 20px;
+    color: #FF776D;
+    font-weight: 500;
+}
+
+.home-container{
+    margin: 0px;
+    padding: 0px;
+ 
+}
+.home-left{
+    display: inline-block;
+}
+.home-right{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+ 
+
+@media screen and (min-width: 1000px) and (max-width: 1360px)  {
+    .home-right img{
+        width: 95%;
+    }
+
+    .home-left{
+        width: 70%;
+    }
+
+    .carousel-item h1{
+        font-size:40px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        overflow-wrap: break-word;
+    }
+    .home-p{
+        font-size: 15px;
+        color: #414141;
+       
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .home-right{
+    display:none;
+    visibility: hidden;
+    }
+
+     
+    
 }
