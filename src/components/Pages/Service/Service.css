@@ -1,0 +1,27 @@
+.service-banner {
+  background-image: url("../../../assets/images/services-left-dec.png");
+  background-repeat: no-repeat;
+}
+
+.service-header {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+.add-shadow {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-left: 50px;
+  margin-bottom: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  text-align: center;
+}
+.service-item {
+  margin-left: 8%;
+  margin-right: 2%;
+}
+
+.service-item img {
+  padding: 1rem;
+}

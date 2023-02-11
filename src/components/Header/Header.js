@@ -8,7 +8,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary py-3">
+    <nav className="navbar navbar-expand-xl bg-body-tertiary ">
       <div className="container-fluid">
         <img className="navbar-brand" src={logoHeader} alt="" />
         <button
@@ -63,14 +63,20 @@ const Header = () => {
               Videos
             </NavLink>
 
-         
-
             <NavLink
               to="cart"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
               className="nav-link"
             >
               Cart
+            </NavLink>
+
+            <NavLink
+              to=""
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              className="nav-link"
+            >
+              Register
             </NavLink>
           </div>
         </div>
