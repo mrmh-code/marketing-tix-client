@@ -1,0 +1,36 @@
+.about-p{
+    color: #FF75A2;
+}
+
+.about-left img{
+    margin-top: 80px;
+    width: 500px;
+    margin-left: 5%;
+}
+
+ 
+@media only screen and (max-width: 700px) and (min-width: 300px)  {
+    .about-service{
+        text-align: center;
+    }
+
+   
+}
+
+@media only screen and (max-width: 1300px) and (min-width: 951px){
+    .about-left img{
+        width: 350px;
+    }
+}
+@media only screen and (max-width: 950px) and (min-width: 750px){
+    .about-left img{
+        width: 650px;
+        margin-left: 80px;
+    }
+}
+@media only screen and (max-width: 749px) and (min-width: 400px){
+    .about-left img{
+        width: 350px;
+        margin-left: 80px;
+    }
+}

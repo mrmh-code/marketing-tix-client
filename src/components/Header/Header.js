@@ -1,12 +1,16 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 import logoHeader from "../../assets/images/logo.png";
+import { AuthContext } from "../../Context/UseContext";
+
 const Header = () => {
   let activeStyle = {
     color: "red",
   };
 
+  const {users,name,logOut}=useContext(AuthContext)
+    console.log(users)
   return (
     <nav className="navbar navbar-expand-xl bg-body-tertiary ">
       <div className="container-fluid">
@@ -55,13 +59,7 @@ const Header = () => {
               Portfolio
             </NavLink>
 
-            <NavLink
-              to="videos"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              className="nav-link"
-            >
-              Videos
-            </NavLink>
+        
 
             <NavLink
               to="cart"
@@ -71,13 +69,20 @@ const Header = () => {
               Cart
             </NavLink>
 
-            <NavLink
-              to=""
+           
+           
+              <NavLink
+              to="/register"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
               className="nav-link"
             >
-              Register
+              {   users?.email? <p>Hi {users.email.slice(0,8)} <button className="btn btn-primary" onClick={logOut}>log Out</button></p>:
+             <span> Register <span className="text-primary ">/ <Link style={{textDecoration:"none"}} to={'/login'}>Login</Link></span> 
+            </span>
+}
+              
             </NavLink>
+        
           </div>
         </div>
       </div>

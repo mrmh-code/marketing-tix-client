@@ -1,14 +1,20 @@
 import React from "react";
 import bannerRight from "../../../assets/images/banner-right-image.png";
+import About from "../About/About";
+import Footer from "../Footer/Footer";
+import Portfolio from "../Portfolio/Portfolio";
 import Service from "../Service/Service";
 import "./Home.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faPhone} from "@fortawesome/free-solid-svg-icons"
+
 const Home = () => {
   return (
     <div>
       {/* Home section start */}
       <section>
         <div className="home-container row ">
-          <div className="home-left col lg-5 sm-10 md-6  ">
+          <div className="home-left col lg-5 sm-10 md-6 container-fluid ">
             <div
               id="carouselExampleDark"
               class="carousel carousel-dark slide ms-1 "
@@ -51,9 +57,9 @@ const Home = () => {
                   </p>
                   <div className="d-flex flex-row mb-2">
                     <button className="btn-blue">Message Us Now</button>
-                    <p>
-                      <i className="fa fa-phone"></i>{" "}
-                      <small className="p-4 number">01733----09</small>
+                    <p className="ms-5">
+                    <i className="phn-icon"><FontAwesomeIcon icon={faPhone} ></FontAwesomeIcon></i>
+                      <small className="p-2 number">01733----09</small>
                     </p>
                   </div>
                 </div>
@@ -75,8 +81,8 @@ const Home = () => {
                   </p>
                   <div className="d-flex flex-row mb-3">
                     <button className="btn-blue">Our Service</button>
-                    <p>
-                      <i></i> <small className="p-4 number">01733----09</small>
+                    <p className="ms-5">
+                    <i className="phn-icon"><FontAwesomeIcon icon={faPhone} ></FontAwesomeIcon></i> <small className="p-2 number">01733----09</small>
                     </p>
                   </div>
                 </div>
@@ -95,8 +101,8 @@ const Home = () => {
                   </p>
                   <div className="d-flex flex-row mb-3">
                     <button className="btn-blue">Watch Video</button>
-                    <p>
-                      <i></i> <span className="p-4 number">01733----09</span>
+                    <p className="ms-5">
+                    <i className="phn-icon"><FontAwesomeIcon icon={faPhone} ></FontAwesomeIcon></i><span className="p-2 number">01733----09</span>
                     </p>
                   </div>
                 </div>
@@ -118,6 +124,15 @@ const Home = () => {
       
       <section>{<Service />}</section>
       {/* Service section end  */}
+
+      <section>{<About/>}</section>
+
+      {/* Plane Table  */}
+      <section>{<Portfolio/>}</section>
+
+      {/* Footer  */}
+
+      <section>{<Footer/>}</section>
     </div>
   );
 };

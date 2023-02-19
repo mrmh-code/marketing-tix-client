@@ -1,0 +1,62 @@
+[
+    {
+      "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead1",
+      "Name":"Starter Plan",
+      "project":10,
+      "price": 140,
+      "spaceOfGb":100,
+      "SEO":20,
+      "discount":160
+    }, 
+
+    {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead2",
+        "Name":"Standard Plan",
+        "project":20,
+        "price": 200,
+        "spaceOfGb":200,
+        "SEO":50,
+        "discount":240
+      }, 
+
+      {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead3",
+        "Name":"Advanced Plan",
+        "project":30,
+        "price": 320,
+        "spaceOfGb":300,
+        "SEO":100,
+        "discount":360
+      }, 
+
+      {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead4",
+        "Name":"Yearly Plan One",
+        "project":40,
+        "price": 450,
+        "spaceOfGb":350,
+        "SEO":150,
+        "discount":260
+      }, 
+
+      {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead5",
+        "Name":"Year Plan Two",
+        "project":50,
+        "price": 520,
+        "spaceOfGb":420,
+        "SEO":200,
+        "discount":360
+      }, 
+      {
+        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead6",
+        "Name":"Yearly Plan Three",
+        "project":60,
+        "price":  550,
+        "spaceOfGb":500,
+        "SEO":300,
+        "discount":360
+      }
+      
+  ]
+  

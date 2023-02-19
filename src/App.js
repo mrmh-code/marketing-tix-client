@@ -1,13 +1,18 @@
 import './App.css';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import Main from './components/Layout/Main/Main';
-import Home from './components/Pages/Home/Home';
-import Service from './components/Pages/Service/Service';
-import About from './components/Pages/About/About';
-import Portfolio from './components/Pages/Portfolio/Portfolio';
-import Videos from './components/Pages/Videos/Videos';
-import Cart from './components/Pages/Cart/Cart';
+import Home from './components/RandomPages/Home/Home';
+ 
+import Videos from './components/RandomPages/Videos/Videos';
+import Cart from './components/RandomPages/Cart/Cart';
+import Register from './components/RandomPages/Register/Register';
+import Login from './components/RandomPages/Login/Login';
+import AboutMainPage from './components/Pages/AboutMainPage/AboutMainPage';
+import PortfolioMainPage from './components/Pages/PortfolioMainPage/PortfolioMainPage';
+import ServiceMainPage from './components/Pages/ServiceMainPage/ServiceMainPage';
+ 
 function App() {
+
   const router=createBrowserRouter([
     {
       path:'/',
@@ -15,19 +20,25 @@ function App() {
       children:[
         {
           path:'/',
+          loader: ()=>{
+            return  fetch('plan.json');
+          },
           element:<Home/>
         },
         {
           path:'/service',
-          element:<Service/>
+          element: <ServiceMainPage/>
         },
         {
           path:'/about',
-          element:<About/>
+          element:<AboutMainPage/>
         },
         {
           path:'/portfolio',
-          element:<Portfolio/>
+          loader: ()=>{
+            return  fetch('plan.json');
+          },
+          element: <PortfolioMainPage/>
         },
         
         {
@@ -38,6 +49,15 @@ function App() {
         {
           path:'/cart',
           element:<Cart/>
+        },
+
+        {
+          path:'/register',
+          element:<Register/>
+        },
+        {
+          path:'/login',
+          element:<Login/>
         }
         
         
