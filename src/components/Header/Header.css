@@ -1,7 +1,7 @@
 /* header logo  */
 .navbar-brand{
    margin-left: 100px;
-   margin-right: 150px;
+   margin-right: 350px;
 }
 
 .nav-link{
@@ -14,4 +14,11 @@
 
  .nav-link:hover{
     color: rgb(0, 0, 0);
+ }
+
+ @media only screen and (min-width: 100px) and (max-width: 900px){
+   .navbar-brand{
+      margin-left: 30px;
+      margin-right: 80px;
+   }
  }

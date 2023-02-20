@@ -8,17 +8,16 @@ const Service = () => {
     <div>
       <section className="services">
         <div className="service-banner">
-            {/* Service Header  */}
+          {/* Service Header  */}
           <h2 className="service-header">
             We <span className="color-2">Provide</span> The Best <br /> Service
             With
             <span className="color-1"> Our Tools</span>{" "}
           </h2>
-            {/* Service Header End  */}
+          {/* Service Header End  */}
 
-            {/* Start Service  */}
+          {/* Start Service  */}
 
-            
           <div className="row service-item">
             <div className="col-lg-3 col-sm-10 col-10  col-md-5 add-shadow">
               <h4>

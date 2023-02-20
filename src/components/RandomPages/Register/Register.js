@@ -1,31 +1,30 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
-import { getAuth } from "firebase/auth";
-const auth = getAuth();
 
 const Register = () => {
-  const { users, createUser } = useContext(AuthContext);
-
+  const { createUser } = useContext(AuthContext);
+  const [isChecked, setsChecked] = useState(true);
+  const navigate = useNavigate();
+  const [error,setError]=useState('');
+  const handleOnChange = () => {
+    setsChecked(!isChecked);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     const name = form.name.value;
-    const RePassword = form.RePassword.value;
+ 
 
     createUser(email, password, name)
       .then((result) => {
-        const user = result.user;
-
-        console.log(user);
+        navigate('/')
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
-
-    console.log(email, password, name, RePassword);
   };
 
   return (
@@ -116,6 +115,7 @@ const Register = () => {
                             type="checkbox"
                             value=""
                             id="form2Example3c"
+                            onChange={handleOnChange}
                           />
                           <label
                             className="form-check-label"
@@ -125,11 +125,13 @@ const Register = () => {
                             <a href="#!">Terms of service</a>
                           </label>
                         </div>
-
+                      <p className="text-danger">{error}</p>
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            className={`btn btn-primary btn-lg ${
+                              isChecked ? "disabled" : ""
+                            } `}
                           >
                             Register
                           </button>

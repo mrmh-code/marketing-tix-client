@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UseContext";
 
 const Login = () => {
-  const { singInUser } = useContext(AuthContext);
+  const { singInUser, googleSingIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [error,setError]=useState();
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -13,14 +18,23 @@ const Login = () => {
 
     singInUser(email, password)
       .then((result) => {
-        const user = result.user;
+       
         form.reset();
         navigate("/");
-        console.log(user);
+       
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
+  };
+
+  const handleGoogle = () => {
+    googleSingIn()
+      .then((result) => {
+        
+        navigate("/");
+      })
+      .catch((error) => {setError(error.message)});
   };
   return (
     <div>
@@ -76,7 +90,7 @@ const Login = () => {
                   </div>
                   <a href="#!">Forgot password?</a>
                 </div>
-
+                <p className="text-danger">{error}</p>
                 <button
                   type="submit"
                   className="btn btn-primary btn-lg btn-block"
@@ -93,17 +107,10 @@ const Login = () => {
                   style={{ backgroundColor: "#3b5998" }}
                   href="#!"
                   role="button"
+                  onClick={handleGoogle}
                 >
-                  <i className="fab fa-facebook-f me-2"></i>Continue with
-                  Facebook
-                </a>
-                <a
-                  className="btn btn-primary btn-lg btn-block"
-                  style={{ backgroundColor: "#55acee" }}
-                  href="#!"
-                  role="button"
-                >
-                  <i className="fab fa-twitter me-2"></i>Continue with Twitter
+                  <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
+                  <i className="fab fa-facebook-f me-2"></i>Continue with google
                 </a>
               </form>
             </div>

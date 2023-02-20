@@ -1,12 +1,12 @@
 import React from "react";
 import bannerRight from "../../../assets/images/banner-right-image.png";
-import About from "../About/About";
-import Footer from "../Footer/Footer";
-import Portfolio from "../Portfolio/Portfolio";
-import Service from "../Service/Service";
 import "./Home.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPhone} from "@fortawesome/free-solid-svg-icons"
+import Footer from "../../RandomPages/Footer/Footer";
+import Service from "../../RandomPages/Service/Service";
+import About from "../../RandomPages/About/About";
+import Portfolio from "../../RandomPages/Portfolio/Portfolio";
 
 const Home = () => {
   return (

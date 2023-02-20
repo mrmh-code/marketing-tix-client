@@ -1,15 +1,19 @@
 import './App.css';
 import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import Main from './components/Layout/Main/Main';
-import Home from './components/RandomPages/Home/Home';
+import Home from './components/Pages/Home/Home';
  
-import Videos from './components/RandomPages/Videos/Videos';
-import Cart from './components/RandomPages/Cart/Cart';
+ 
 import Register from './components/RandomPages/Register/Register';
 import Login from './components/RandomPages/Login/Login';
 import AboutMainPage from './components/Pages/AboutMainPage/AboutMainPage';
 import PortfolioMainPage from './components/Pages/PortfolioMainPage/PortfolioMainPage';
 import ServiceMainPage from './components/Pages/ServiceMainPage/ServiceMainPage';
+import CartDetails from './components/RandomPages/CartDetails/CartDetails';
+import PrivateRoute from './Route/PrivateRoute';
+import NotFoundPage from './components/Pages/NotFoundPage/NotFoundPage';
+ 
+ 
  
 function App() {
 
@@ -21,7 +25,7 @@ function App() {
         {
           path:'/',
           loader: ()=>{
-            return  fetch('plan.json');
+            return  fetch('https://marketing-tix-server.vercel.app/plan');
           },
           element:<Home/>
         },
@@ -29,6 +33,7 @@ function App() {
           path:'/service',
           element: <ServiceMainPage/>
         },
+         
         {
           path:'/about',
           element:<AboutMainPage/>
@@ -36,19 +41,17 @@ function App() {
         {
           path:'/portfolio',
           loader: ()=>{
-            return  fetch('plan.json');
+            return  fetch('https://marketing-tix-server.vercel.app/plan');
           },
           element: <PortfolioMainPage/>
-        },
-        
+        }, 
+ 
         {
-          path:'/videos',
-          element:<Videos/>
-        },
-        
-        {
-          path:'/cart',
-          element:<Cart/>
+          path:'/cart/:id',
+          loader: ({params})=>{
+            return fetch(`https://marketing-tix-server.vercel.app/plan/${params.id}`)
+          },
+          element: <PrivateRoute><CartDetails/></PrivateRoute>
         },
 
         {
@@ -58,6 +61,10 @@ function App() {
         {
           path:'/login',
           element:<Login/>
+        },
+        {
+          path:'*',
+          element:<NotFoundPage/>
         }
         
         

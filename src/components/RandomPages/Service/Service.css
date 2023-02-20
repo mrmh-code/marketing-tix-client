@@ -25,3 +25,10 @@
 .service-item img {
   padding: 1rem;
 }
+
+@media screen and (min-width: 250px) and (max-width: 860px) {
+  .service-item {
+    margin-left: 1%;
+    
+  }
+}

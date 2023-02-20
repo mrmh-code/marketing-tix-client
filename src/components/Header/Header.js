@@ -9,8 +9,8 @@ const Header = () => {
     color: "red",
   };
 
-  const {users,name,logOut}=useContext(AuthContext)
-    console.log(users)
+  const {users,logOut}=useContext(AuthContext)
+ 
   return (
     <nav className="navbar navbar-expand-xl bg-body-tertiary ">
       <div className="container-fluid">
@@ -58,19 +58,7 @@ const Header = () => {
             >
               Portfolio
             </NavLink>
-
-        
-
-            <NavLink
-              to="cart"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              className="nav-link"
-            >
-              Cart
-            </NavLink>
-
-           
-           
+         
               <NavLink
               to="/register"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}
